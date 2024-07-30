@@ -11,12 +11,16 @@ function App() {
   //! Because i think passing the setter function (setCartItems) directly might be expensive.
 
   function updateProduct(product: ProductType) {
+    
+    const isExist = cartItems.find(item => item.name === product.name);
+
+    if(isExist){
+      alert("This product is already added. Please select a different one.");
+      return;
+    }
+
     setCartItems([...cartItems, product]);
   }
-
-  // useEffect(() => {
-  //   console.log(cartItems);
-  // }, [cartItems]);
 
   return (
     <>
