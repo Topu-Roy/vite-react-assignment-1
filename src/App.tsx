@@ -1,4 +1,6 @@
-import "./App.css";
+import "./index.css";
+import { productsArray } from "./assets/productArray";
+import Cart from "./components/Cart";
 import Products from "./components/Products";
 
 function App() {
@@ -8,7 +10,9 @@ function App() {
         Assignment by Topu Roy
       </h1>
 
-      <Products />
+      <Cart />
+
+      <Products productArray={productsArray} />
     </>
   );
 }

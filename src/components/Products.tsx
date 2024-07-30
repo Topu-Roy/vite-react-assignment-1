@@ -1,11 +1,11 @@
-import { productsArray } from "../assets/productArray";
+import { type ProductType } from "../assets/productArray";
 import ProductCard from "./ProductCard";
 
-export default function Products() {
+export default function Products({productArray} : {productArray: ProductType[]}) {
   return (
     <>
       <div className="products_wrapper">
-        {productsArray.map((item, index) => (
+        {productArray.map((item, index) => (
           <ProductCard key={index} product={item} />
         ))}
       </div>
