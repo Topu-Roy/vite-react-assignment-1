@@ -1,6 +1,6 @@
 import { ProductType } from "../assets/productArray";
 
-export default function ProductCard({ product }: {product: ProductType}) {
+export default function ProductCard({ product }: { product: ProductType }) {
   const { name, imageUrl, price } = product;
 
   return (

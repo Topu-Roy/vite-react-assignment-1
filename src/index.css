@@ -1,4 +1,5 @@
-*, html {
+*,
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,43 +7,39 @@
 
 body {
   background-color: azure;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  text-align: center;
-  padding: 5rem 0;
-}
-
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+button {
+  border: 0px;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: #646cff;
+  background-color: inherit;
 }
 
-button:focus, button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
+hr {
+  width: 0.5rem;
+  color: rgba(70, 73, 73, 0.404);
+  width: 100%;
+  margin: 3rem 0;
+}
+
+.heading {
+  font-size: 3.2em;
+  line-height: 1.1;
+  text-align: center;
+  padding-top: 3rem;
+}
 
 .products_wrapper {
-  max-width: 80rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
   gap: 1rem;
 }
 
@@ -60,7 +57,7 @@ button:focus, button:focus-visible {
 .productCard_image {
   width: 100%;
   border-radius: 1rem;
-} 
+}
 
 .productCard_details {
   background-color: rgb(193, 206, 206);
@@ -78,9 +75,57 @@ button:focus, button:focus-visible {
 .productCard_details_price {
   font-size: larger;
   font-weight: 900;
-
 }
 
-.productCard_details_price::before{
+.productCard_details_price::before {
   content: "$";
+}
+
+.cart_btn_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart_toggle_btn {
+  position: relative;
+  color: aliceblue;
+  font-size: medium;
+  font-weight: 500;
+  width: 12rem;
+  border-radius: 0.5rem;
+  height: 3rem;
+  background-color: rgb(51, 48, 48);
+}
+
+.cart_products_count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.3rem;
+  width: 2.3rem;
+  background-color: beige;
+  padding: 1rem;
+  border-radius: 99rem;
+  color: black;
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  border: 2px solid rgba(0, 0, 0, 0.336);
+}
+
+.section_title {
+  margin-bottom: 1rem;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.hint_text {
+  text-align: center;
+  color: rgb(46, 44, 44);
+  font-style: italic;
+}
+
+.cart_toggle_btn:hover {
+  background-color: rgb(39, 37, 37);
 }
