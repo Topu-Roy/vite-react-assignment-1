@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { type ProductType } from "../assets/productArray";
-import ProductCard from "./ProductCard";
+import { type CartItemType } from "../App";
 
-export default function Cart({ products }: { products: ProductType[] }) {
+export default function Cart({ products }: { products: CartItemType[] }) {
   const [visible, setVisible] = useState(false);
+  const totalProducts = products.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <>
       <div className="cart_btn_wrapper">
@@ -12,7 +13,7 @@ export default function Cart({ products }: { products: ProductType[] }) {
           className="cart_toggle_btn"
         >
           {!visible ? "Show Selected Products" : "Hide Selected Products"}
-          <span className="cart_products_count">{products.length}</span>
+          <span className="cart_products_count">{totalProducts}</span>
         </button>
       </div>
 
@@ -21,7 +22,26 @@ export default function Cart({ products }: { products: ProductType[] }) {
       {visible ? (
         <div className="products_wrapper">
           {products.map((item, index) => (
-            <ProductCard product={item} key={index} />
+            <button key={index}>
+              <div className="productCard">
+                <img
+                  className="productCard_image"
+                  src={item.imageUrl}
+                  alt={item.name}
+                />
+                <div className="productCard_details">
+                  <p className="productCard_details_name">
+                    {item.name.length > 20
+                      ? item.name.slice(0, 18) + "..."
+                      : item.name}
+                  </p>
+                  <p className="productCard_details_price">{item.price}</p>
+                </div>
+                <p className="productCard_details_Quantity">
+                  Quantity: {item.quantity}
+                </p>
+              </div>
+            </button>
           ))}
         </div>
       ) : (
@@ -32,7 +52,7 @@ export default function Cart({ products }: { products: ProductType[] }) {
 
       {visible && products.length <= 0 ? (
         <p className="hint_text">No product selected yet.</p>
-      ): null}
+      ) : null}
     </>
   );
 }

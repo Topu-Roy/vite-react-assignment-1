@@ -81,6 +81,13 @@ hr {
   content: "$";
 }
 
+.productCard_details_Quantity {
+  width: 100%;
+  text-align: left;
+  font-size: larger;
+  font-weight: 600;
+}
+
 .cart_btn_wrapper {
   display: flex;
   justify-content: center;
